@@ -5,7 +5,6 @@ from django.urls import reverse_lazy
 from django import forms
 from core.models import iconos
 from django.shortcuts import render
-from captcha.fields import ReCaptchaField
 
 # Create your views here.
 class SignUpView(CreateView):

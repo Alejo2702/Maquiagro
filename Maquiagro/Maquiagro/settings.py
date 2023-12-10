@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import locale
 
+# Configuración regional para Colombia
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -48,7 +50,6 @@ INSTALLED_APPS = [
     'pedidos',
     'carrito',
     'colorfield',
-    'captcha'
     
    
 
@@ -130,6 +131,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+locale.setlocale(locale.LC_ALL, 'es_CO.UTF-8')
+
+USE_THOUSAND_SEPARATOR = True
+THOUSAND_SEPARATOR = '.'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
@@ -154,5 +159,4 @@ EMAIL_HOST_USER = 'julitmacias2004@gmail.com'
 EMAIL_HOST_PASSWORD = 'spdrguxaoehkxmxp'
 EMAIL_USE_TLS = True
 
-RECAPTCHA_PUBLIC_KEY = '6Lcmr-gnAAAAAGwPwQlU89ahcCr4fgcPRFuXCFQ7'
-RECAPTCHA_PRIVATE_KEY = '6Lcmr-gnAAAAAOcdPKHNm_mESz5cOXPjTQ9Z1fJo'
+
